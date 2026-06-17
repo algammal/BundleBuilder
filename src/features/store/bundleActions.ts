@@ -13,18 +13,17 @@ export type BundleAction =
         };
     }
     | {
-        type: "INCREMENT_QUANTITY";
+        type: "SET_QUANTITY";
         payload: {
             productId: string;
-        };
-    }
-    | {
-        type: "DECREMENT_QUANTITY";
-        payload: {
-            productId: string;
+            variantId?: string;
+            quantity: number;
         };
     }
     | {
         type: "RESTORE_STATE";
         payload: BundleState;
+    }
+    | {
+        type: "RESET_STATE";
     };

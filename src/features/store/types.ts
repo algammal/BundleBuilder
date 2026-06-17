@@ -1,11 +1,7 @@
 export interface ProductSelection {
     productId: string;
-
-    selectedVariantId?: string;
-
+    selectedVariantId: string;
     variantQuantities: Record<string, number>;
-
-    quantity?: number;
 }
 
 export interface BundleState {
