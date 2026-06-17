@@ -1,14 +1,33 @@
+import type { StepType } from "../types/common";
+
 export interface ProductVariant {
     id: string;
-    name: string;
-    price: number;
-    compareAt?: number;
+    label: string;
+    swatchColor?: string;
+    thumbnail?: string;
 }
-
-export interface BundleStep {
+export interface Product {
     id: string;
+    step: StepType;
     title: string;
-    products: ProductVariant[];
+    description?: string;
+    image: string;
+
+    price: number;
+    compareAtPrice?: number;
+
+    badge?: string;
+    learnMoreUrl?: string;
+
+    variants?: ProductVariant[];
+}
+export interface BundleStep {
+    id: StepType;
+    order: number;
+    title: string;
+    icon: string;
+    nextStepLabel?: string;
+    products: Product[];
 }
 
 export interface BundleConfigResponse {

@@ -2,13 +2,32 @@
     "steps": [
         {
             "id": "cameras",
+            "order": 1,
             "title": "Choose your cameras",
+            "icon": "camera",
+            "nextStepLabel": "Choose your plan",
             "products": [
                 {
                     "id": "cam-v4",
-                    "name": "Wyze Cam v4",
+                    "step": "cameras",
+                    "title": "Wyze Cam v4",
+                    "description": "Indoor/outdoor camera",
+                    "image": "/images/cam-v4.png",
                     "price": 25.98,
-                    "compareAt": 39.99
+                    "compareAtPrice": 39.99,
+                    "badge": "Save 22%",
+                    "variants": [
+                        {
+                            "id": "white",
+                            "label": "White",
+                            "swatchColor": "#FFFFFF"
+                        },
+                        {
+                            "id": "black",
+                            "label": "Black",
+                            "swatchColor": "#000000"
+                        }
+                    ]
                 }
             ]
         }
