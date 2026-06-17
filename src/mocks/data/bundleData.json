@@ -1,0 +1,16 @@
+{
+    "steps": [
+        {
+            "id": "cameras",
+            "title": "Choose your cameras",
+            "products": [
+                {
+                    "id": "cam-v4",
+                    "name": "Wyze Cam v4",
+                    "price": 25.98,
+                    "compareAt": 39.99
+                }
+            ]
+        }
+    ]
+}
