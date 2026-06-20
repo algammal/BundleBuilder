@@ -52,7 +52,47 @@ export function BuilderArea({ steps }: { steps: BundleStep[] }) {
                         selectedCount={selectedCount}
                         hideTopBorder={state.activeStep === index - 1}
                     >
-                        <div>hello world</div>
+                        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-[15px]">
+                            {step.products.map(product => {
+                                const selectedVariantId = getSelectedVariant(state, product.id) || product.variants?.[0]?.id;
+                                const quantity = selectedVariantId
+                                    ? getVariantQuantity(state, product.id, selectedVariantId)
+                                    : getVariantQuantity(state, product.id, "default");
+
+                                return (
+                                    <ProductCard
+                                        key={product.id}
+                                        id={product.id}
+                                        title={product.title}
+                                        description={product.description}
+                                        image={product.image}
+                                        price={product.price}
+                                        compareAtPrice={product.compareAtPrice}
+                                        badge={product.badge}
+                                        learnMoreUrl={product.learnMoreUrl}
+                                        variants={product.variants}
+                                        selectedVariantId={selectedVariantId}
+                                        onVariantSelect={(variantId) => {
+                                            dispatch({
+                                                type: "SELECT_VARIANT",
+                                                payload: { productId: product.id, variantId }
+                                            });
+                                        }}
+                                        quantity={quantity}
+                                        onQuantityChange={(qty) => {
+                                            dispatch({
+                                                type: "SET_QUANTITY",
+                                                payload: {
+                                                    productId: product.id,
+                                                    variantId: selectedVariantId || "default",
+                                                    quantity: qty
+                                                }
+                                            });
+                                        }}
+                                    />
+                                );
+                            })}
+                        </div>
                     </Accordion>
                 );
             })}
