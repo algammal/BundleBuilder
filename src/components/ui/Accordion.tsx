@@ -72,7 +72,7 @@ export function Accordion({
                             <button
                                 type="button"
                                 onClick={onNext}
-                                className="rounded-full border border-[#5034E5] px-6 py-2.5 text-sm font-semibold text-[#5034E5] hover:bg-[#5034E5] hover:text-white transition-colors"
+                                className="rounded-[7px] border border-[#4E2FD2] px-6 py-2.5 text-sm font-semibold text-[#5034E5] hover:bg-[#5034E5] hover:text-white transition-colors"
                             >
                                 Next: {nextLabel}
                             </button>
