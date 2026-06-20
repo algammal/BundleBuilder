@@ -5,6 +5,7 @@ export interface ProductVariant {
     label: string;
     swatchColor?: string;
     thumbnail?: string;
+    image?: string;
 }
 export interface Product {
     id: string;

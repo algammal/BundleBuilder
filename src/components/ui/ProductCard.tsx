@@ -67,7 +67,13 @@ export function ProductCard({
                 <div className="flex flex-1 flex-col justify-between">
                     <div className="flex flex-col gap-1">
                         <div className="flex justify-between items-start gap-4">
-                            <h3 className="text-[16px] font-medium text-[#1F1F1F]">{title}</h3>
+                            <h3 className="text-[16px] font-medium text-[#1F1F1F]">
+                                {title === "Cam Unlimited" ? (
+                                    <>Cam <span className="text-[#4E2FD2]">Unlimited</span></>
+                                ) : (
+                                    title
+                                )}
+                            </h3>
                         </div>
 
                         {description && (

@@ -19,16 +19,17 @@ interface StepperProps {
     onChange: (newValue: number) => void;
     min?: number;
     max?: number;
+    isPannel?: boolean;
 }
 
-export function Stepper({ value, onChange, min = 0, max = 99 }: StepperProps) {
+export function Stepper({ value, onChange, min = 0, max = 99, isPannel = false }: StepperProps) {
     return (
         <div className="flex items-center gap-3">
             <button
                 type="button"
                 disabled={value <= min}
                 onClick={() => onChange(value - 1)}
-                className="flex h-8 w-8 items-center justify-center rounded border bg-[#F0F4F7] border-[#F0F4F7] text-[#1F1F1F] disabled:text-[#E6EBF0] disabled:border-[#E6EBF0] disabled:bg-transparent"
+                className={`flex h-8 w-8 items-center justify-center rounded border ${isPannel ? 'bg-[#ffff] border-[#ffff]' : 'bg-[#F0F4F7] border-[#F0F4F7]'} text-[#1F1F1F] disabled:text-[#E6EBF0] disabled:border-[#E6EBF0] disabled:bg-transparent`}
             >
                 <MinusIcon className="h-4 w-4" />
             </button>
@@ -39,7 +40,7 @@ export function Stepper({ value, onChange, min = 0, max = 99 }: StepperProps) {
                 type="button"
                 disabled={value >= max}
                 onClick={() => onChange(value + 1)}
-                className="flex h-8 w-8 items-center justify-center rounded border bg-[#F0F4F7] border-[#F0F4F7] text-[#1F1F1F] disabled:text-[#E6EBF0] disabled:border-[#E6EBF0] disabled:bg-transparent"
+                className={`flex h-8 w-8 items-center justify-center rounded border ${isPannel ? 'bg-[#ffff] border-[#ffff]' : 'bg-[#F0F4F7] border-[#F0F4F7]'} text-[#1F1F1F] disabled:text-[#E6EBF0] disabled:border-[#E6EBF0] disabled:bg-transparent`}
             >
                 <PlusIcon className="h-4 w-4" />
             </button>
