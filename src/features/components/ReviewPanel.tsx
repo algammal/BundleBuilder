@@ -142,9 +142,9 @@ export function ReviewPanel({ steps }: { steps: BundleStep[] }) {
                     </div>
 
                     <div className="">
-                        <div className="flex items-end justify-between mb-2 md:flex-col md:items-start sm:flex-col lg:flex-row">
+                        <div className="flex items-center justify-between mb-2 md:flex-col sm:flex-col lg:flex-row">
                             <div className="flex items-center gap-2 sm:mb-4">
-                                <img src={satisfactionBadge} alt="100% Wyze satisfaction guarantee" className="h-16 w-16 object-contain" />
+                                <img src={satisfactionBadge} alt="100% Wyze satisfaction guarantee" className="h-[131px] w-[131px] object-contain" />
                                 <div className="ml-2 hidden md:block lg:hidden">
                                     <p className="font-semibold">30-day hassle-free returns</p>
                                     <p>If you're not totally in love with the product, we will refund you 100%.</p>
