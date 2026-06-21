@@ -52,7 +52,7 @@ export function BuilderArea({ steps }: { steps: BundleStep[] }) {
                         selectedCount={selectedCount}
                         hideTopBorder={state.activeStep === index - 1}
                     >
-                        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-[15px]">
+                        <div className="grid grid-cols-1 gap-4 lg:grid-cols-5 lg:gap-[15px] md:grid-cols-2 sm:grid-cols-2 xl:grid-cols-2">
                             {step.products.map(product => {
                                 const selectedVariantId = getSelectedVariant(state, product.id) || product.variants?.[0]?.id;
                                 const quantity = selectedVariantId

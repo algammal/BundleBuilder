@@ -46,7 +46,7 @@ export function ProductCard({
 
     return (
         <div
-            className={`relative flex flex-col rounded-xl border p-4 transition-colors sm:p-6 ${isSelected ? "border-[#5034E5] bg-white shadow-sm ring-1 ring-[#4E2FD2B2]" : "border-[#ffff] bg-white"
+            className={`relative flex flex-col rounded-xl border p-2 transition-colors xs:p-6 ${isSelected ? "border-[#5034E5] bg-white shadow-sm ring-1 ring-[#4E2FD2B2]" : "border-[#ffff] bg-white"
                 }`}
         >
             {badge && (
@@ -55,7 +55,7 @@ export function ProductCard({
                 </div>
             )}
 
-            <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
+            <div className="flex flex-col md:flex-col xl:flex-row sm:gap-6">
                 <div className="flex h-32 w-full shrink-0 items-center justify-center sm:h-32 sm:w-32 rounded-lg">
                     {image ? (
                         <img src={imageMap[image]} alt={title} className="max-h-full max-w-full object-contain p-2" />
@@ -88,7 +88,7 @@ export function ProductCard({
                     </div>
 
                     {variants && variants.length > 0 && (
-                        <div className="flex mb-[10px]">
+                        <div className="flex mb-[10px] md:flex-wrap sm:flex-nowrap">
                             {variants.map(variant => (
                                 <button
                                     key={variant.id}
